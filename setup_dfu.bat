@@ -20,27 +20,22 @@ curl -L -o python_installer.exe https://www.python.org/ftp/python/3.10.11/python
 
 echo [2/5] Installing Python...
 python_installer.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
-:: Wait for installation
 timeout /t 10
 
 echo [3/5] Setting up Python environment...
-:: Create virtual environment in current directory
 python -m venv dfu_env
 call dfu_env\Scripts\activate.bat
 
 :: Install required packages
 python -m pip install --upgrade pip
-pip install pyusb
-
-echo [4/5] Cleanup...
-del python_installer.exe
+pip install pyusb libusb libusb1 pyusb-backend-libusb1
 
 echo =====================================
 echo Installation completed!
 echo.
 echo Next steps:
 echo 1. Make sure device is in DFU mode
-echo 2. Verify Zadig installed WinUSB driver
+echo 2. Run Zadig and install WinUSB driver
 echo =====================================
 
 pause

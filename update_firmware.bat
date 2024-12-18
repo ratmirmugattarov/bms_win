@@ -8,12 +8,14 @@ echo =====================================
 :: Activate the virtual environment
 call dfu_env\Scripts\activate.bat
 
-echo [1/2] Checking device connection...
+echo [1/3] Checking device connection...
 python dfu.py -l
 
-echo [2/2] Running firmware update...
+echo [2/3] Mass erasing...
 python dfu.py -m
-python dfu.py "rbms-pybdsf2w-usg-ribv3.dfu"
+
+echo [3/3] Uploading firmware...
+python dfu.py --upload "rbms-pybdsf2w-usg-ribv3.dfu"
 
 deactivate
 
