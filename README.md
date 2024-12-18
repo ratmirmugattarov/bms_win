@@ -4,4 +4,11 @@ emergency update for BMS on windows
 in powershell run:
 Start-Process PowerShell -Verb RunAs  
 
-update_firmware.bat
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+
+
+cd ..
+cd ..
+
+.\update_firmware.bat
+
