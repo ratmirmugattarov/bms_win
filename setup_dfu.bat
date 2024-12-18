@@ -24,13 +24,13 @@ python_installer.exe /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
 timeout /t 10
 
 echo [3/5] Setting up Python environment...
-:: Create new virtual environment in Windows path
-C:\Program Files\Python310\python.exe -m venv C:\dfu_venv
-call C:\dfu_venv\Scripts\activate.bat
+:: Create virtual environment in current directory
+python -m venv dfu_env
+call dfu_env\Scripts\activate.bat
 
 :: Install required packages
-C:\dfu_venv\Scripts\python.exe -m pip install --upgrade pip
-C:\dfu_venv\Scripts\pip install pyusb
+python -m pip install --upgrade pip
+pip install pyusb
 
 echo [4/5] Cleanup...
 del python_installer.exe

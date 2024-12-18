@@ -6,14 +6,14 @@ echo DFU Firmware Update Tool
 echo =====================================
 
 :: Activate the virtual environment
-call C:\dfu_venv\Scripts\activate.bat
+call dfu_env\Scripts\activate.bat
 
 echo [1/2] Checking device connection...
-C:\dfu_venv\Scripts\python.exe dfu.py -l
+python dfu.py -l
 
 echo [2/2] Running firmware update...
-C:\dfu_venv\Scripts\python.exe dfu.py -m
-C:\dfu_venv\Scripts\python.exe dfu.py "rbms-pybdsf2w-usg-ribv3.dfu"
+python dfu.py -m
+python dfu.py "rbms-pybdsf2w-usg-ribv3.dfu"
 
 deactivate
 
