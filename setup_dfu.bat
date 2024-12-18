@@ -30,6 +30,7 @@ call dfu_env\Scripts\activate.bat
 python -m pip install --upgrade pip
 pip install pyusb
 pip install libusb1
+pip install libusb-win32
 
 echo [4/5] Downloading and installing Zadig...
 curl -L -o zadig.exe https://github.com/pbatard/libwdi/releases/download/v1.5.0/zadig-2.8.exe
@@ -40,10 +41,11 @@ echo Installation completed!
 echo.
 echo Next steps:
 echo 1. In Zadig:
-echo    - Options -> List All Devices
-echo    - Select your DFU device
-echo    - Install WinUSB driver
-echo 2. Put device in DFU mode
+echo    - Click Options -> List All Devices
+echo    - Find your device (might show as Unknown Device)
+echo    - Select WinUSB driver
+echo    - Click Replace Driver
+echo 2. Make sure device is in DFU mode
 echo 3. Run update_firmware.bat
 echo =====================================
 
