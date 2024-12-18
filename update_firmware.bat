@@ -38,7 +38,7 @@ copy dfu.py temp_dfu.py
 :: Run the DFU update
 echo Running firmware update...
 python temp_dfu.py --mass-erase
-python temp_dfu.py rbms-pybdsf2e-usg-ribv3.dfu
+python temp_dfu.py rbms-pybdsf2w-usg-ribv3.dfu
 
 :: Clean up
 del temp_dfu.py
